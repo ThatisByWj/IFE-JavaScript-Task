@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>零基础JavaScript编码（二）</title>
+  </head>
+<body>
+
+  <h3>空气质量指数大于60的城市</h3>
+  <ul id="aqi-list">
+
+
+  </ul>
+
+<script type="text/javascript">
+
+var aqiData = [
+  ["北京", 90],
+  ["上海", 50],
+  ["福州", 10],
+  ["广州", 50],
+  ["成都", 90],
+  ["西安", 100]
+];
+
+(function(){
+
+  /*
+  在注释下方编写代码
+  遍历读取aqiData中各个城市的数据
+  将空气质量指数大于60的城市显示到aqi-list的列表中
+  */
+
+  var arr=new Array();//建一个新数组来存指数大于60的城市
+  var list="";
+  var oUl=document.getElementById("aqi-list");
+
+  /*for循环寻出指数大于60的城市，并存入数组*/
+ for(var i=0;i<aqiData.length;i++){
+ 	if(aqiData[i][1]>60){
+ 		arr.unshift(aqiData[i]);
+	}
+}
+
+/*for循环把所有指数大于60的城市存入list */
+for(var n=0;n<arr.length;n++){
+	 list+="<li>"+arr[n]+"</li>";
+}
+	oUl.innerHTML=list;  //添加到aqi-list的列表中
+})();
+
+</script>
+</body>
+</html>
